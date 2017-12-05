@@ -1,0 +1,160 @@
+1.背景色
+ background-color:red;
+
+p{
+	 background-color; 背景色
+	border:1px solid #f00; 边框
+	margin:0 auto; 对齐方式（上下为0 左右居中）
+	width:500px; 标签的宽度
+	height:100px; 标签的高度
+	text-align:center; 文字的居中
+	 line-height:100px  行高（垂直居中）
+         background-image:url('paper.gif');用图片做背景
+}
+
+2 body
+ {
+  background-image:url('gradient2.png');
+  background-repeat:repeat-x;水平平铺
+  background-position:center center; 背景图片的位置
+ }
+可以缩写成：body {background:#ffffff url('img_tree.png') no-repeat right top;}
+
+3 body
+ {
+   background-image:url('img_tree.png');
+   background-repeat:no-repeat;
+  }
+
+4.background	简写属性，作用是将背景属性设置在一个声明中。
+background-attachment	背景图像是否固定或者随着页面的其余部分滚动。
+background-color	设置元素的背景颜色。
+background-image	把图像设置为背景。
+background-position	设置背景图像的起始位置。
+background-repeat	设置背景图像是否及如何重复。
+
+5、a 标签去掉下滑线  a {text-decoration:none}  a:link{background-color:red}可以为链接加上背景色
+   a:link {color:#FF0000;}/* 未被访问的链接 */
+
+   a:visited {color:#00FF00;}/* 已被访问的链接 */
+
+   a:hover {color:#FF00FF;}/* 鼠标指针移动到链接上 */
+
+   a:active {color:#0000FF;}/* 正在被点击的链接 */
+
+ 注释***  为了使定义生效，a:hover必须位于a:link 和 a:visited 之后！a:active 必须位于 a:hover之后
+
+6、文本  text-align:center right left justify(当文本过长时，它可以保证每行都一样才换行)
+
+7、文本加线  h1 {text-decoration:overline;color:red;}（上划线）
+             h2 {text-decoration:line-through;color:yellow}（中线）
+             h3 {text-decoration:underline;}（下划线）
+
+8、文本英文字母转换  
+  p {text-transform:uppercase;}（把英文字母转化为大写）
+  p {text-transform:lowercase;}（把英文字母转化为小写）
+  p {text-transform:capitalize;}（把首字母转化为大写）
+9、文本字段开头的缩进
+  p {text-indent:50px;} （缩进50px）
+
+10、设置文本的大小
+  h2 {font-size:30px;} 设置字体的大小
+     h1 {font-size:4.5em;} /* 40px/16=2.5em */  用em ,倍数的方式去调整字体的大小
+
+11、ul 里面的li可以改变前边的样式
+ ul{list-style-type:circle(空心)|square（实心方形）|none（去掉）}
+
+  ul 
+{
+	list-style-image:url('sqpurple.gif');（把li前面的那个换成图片）
+}
+
+
+12、ul里面改变前面的显示成图片，background-position:0px（X轴） 5px(Y轴);可以定位那个图片
+
+13、table表格的内容
+
+        border-collapse:collapse;去掉内边距离 
+14、隐藏元素
+  p{visibility:hidden;}隐藏后占用空间   p{ display:none} 隐藏后不占用空间
+
+15、把块级元素转化为行内元素
+    li{display:inline;}
+16、把行内元素转化为块级元素
+    span{display:block;}
+
+17、文本的行高  line-height
+
+18、定位 position    fixed固定（不随下拉按钮变化变化）  p{ position:fixed;  top 30px; right:30px;}
+
+relative 相对于正常的标签
+
+absolute: 绝对定位  相对于父级元素的绝对，如果没有父类元素，就相对与html
+
+z-index:-1;(显示的层级)
+
+19、显示鼠标小手  <span style="cursor:pointer">pointer</span>
+
+20、垂直居中       vertical-align: middle;（对其图片）
+
+
+21、当用absolute绝对定位时使用  .center p {
+    margin: 0;
+    position: absolute;
+   top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+} 可以水平垂直居中
+
+22、控制标签旋转   #div2
+{
+	transform:rotate(40deg);
+
+}
+
+
+23、a 链接做动态导航
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+} 
+
+24、为背景加阴影
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  0.2代表的是透明度
+
+25、div也可以用 :hover
+  <div class="aaa">
+        <span>您好</span>
+        <p class="bbb"></p>
+  </div>
+   .aaa:hover .bbb{
+   display:block;
+ }
+
+26、修饰边框的棱角  border-radius: 6px;
+
+27、css中也有淡入的效果   /* 淡入 - 1秒内从 0% 到 100% 显示: */
+    opacity: 0;
+    transition: opacity 1s;   
+
+28、响应式布局
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+29、文字简的间距
+leter-spacing:
+
+30、溢出隐藏
+ overflow:hidden;
+
+31、img 是一个特殊的元素 ***---》》》 img属于行内替换元素。height/width/padding/margin均可用。效果等于块元素。
+
+32、溢出隐藏 overflow-x:hidden;隐藏超过x轴的 ，overflow-y:hidden;隐藏超出y轴的
+
+33、table 表格中为第一行加色  table tr:nth-of-type(1){ background: #fcf; }

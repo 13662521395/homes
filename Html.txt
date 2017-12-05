@@ -1,0 +1,31 @@
+1 optgroup 标签
+<select id="WebDesign" name="web设计的语言">
+        <optgroup label="client">
+            <option value="HTML" >HTML888</option>
+            <option value="CSS">CSS</option>
+            <option value="javascript" selected='selected'>javascript</option>
+        </optgroup>
+        <optgroup label="server">
+            <option id="zou" value="PHP">PHP</option>
+            <option value="ASP">ASP</option>
+            <option value="JSP">JSP</option>
+        </optgroup>
+        <optgroup label="database">
+            <option value="Access">Access</option>
+            <option value="MySQL">MySQL</option>
+            <option value="SQLServer">SQLServer</option>
+        </optgroup>
+    </select>
+
+2.自定义  
+         <dl>
+		<dt>广州</dt>
+		<dd>白云区</dd>
+		<dd>越秀区</dd>
+	</dl>
+
+3<hr size='9' width='80%' color='ff0000'>水平线(设定宽度) 
+
+
+4,、input标签
+  

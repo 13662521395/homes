@@ -1,0 +1,5 @@
+1.ÓÃDb::name();·½·¨ 
+public function finduser($username){
+     	 $result = Db::name('users')->query("select * from wp_users where name='{$username}'");
+        return $result;
+     }

@@ -1,0 +1,186 @@
+1、js中的函数  日期函数 Date(); isNaN(x) 判断x变量是否为数字
+
+2、获得元素  document.getElementById();是一个对象，有属性值
+
+3、表单的属性  document.forms["tag"]["vie"].value; 
+
+4、闭包函数
+第一种形式  function aa(){
+  var count=0;
+  return function cc(){
+         alert(++count);
+ }
+}
+
+var c=aa();  c();
+
+第二种形式
+var c = (function(){
+   var count=0;
+   return function(){
+   	return ++count;
+   }
+
+
+})();
+document.write(c());
+document.write(c());
+        
+用对象的方式去实现；
+
+var obj = {
+  count: 0,
+  inc: function () {
+    return ++this.count;
+  }
+};
+obj.inc(); // count: 1
+obj.inc(); // count: 2
+
+4、document.write();  在onload之后调用，会清空内容，重新写入
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        window.onload = function () {
+            document.write("我是输出内容！");
+        }
+    </script>
+</head>
+<body>
+    <h1>我是HTML标签内容！</h1>
+</body>
+</html>
+
+5、javascript 可以检查cookie是否可用 navigator.cookieEnabled ==true
+
+6、添加时间监听  document.getElementById('myBtn').addEventListener('click',function(){
+    alert('我很帅！');
+}) 
+
+7、javascript中绑定时间的方法(网页可以看http://www.jb51.net/article/95705.htm)
+ 1）在DOM元素中直接绑定
+ 2）在JavaScript代码中直接绑定
+ 3) 绑定事件监听函数
+
+8、js中关闭窗口
+ 1）一般的窗口关闭的JS如下写法：
+    window.close()
+ 2） window.open("","_self").close() 
+ 3）如果是frame的时候如下写法：
+   一般：window.top.close()
+   改善：window.open("about:blank","_top").close()   或者 window.open("","_top").close()
+
+
+9、定时器  var tt = setInterval(function(),1000);clearInterval(tt);
+<p>点击按钮，在等待 3 秒后弹出 "Hello"。</p>
+<button onclick="myFunction()">点我</button>
+<script>
+function myFunction(){
+  var Timer = setInterval(aa,3000);
+}
+	function aa(){
+	      alert(333);
+	}
+</script>
+
+
+==========================================================================================
+jquery中的方法
+1、jQuery slideToggle() 方法可以在 slideDown() 与 slideUp() 方法之间进行切换，双向滑动。
+2、jQuery fadeToggle() 方法可以在 fadeIn() 与 fadeOut() 方法之间进行切换。双向淡入淡出
+
+http://www.runoob.com/try/ajax/demo_test.txt
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+
+JSONP跨域传输 html代码
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSONP 实例</title>
+</head>
+<body>
+    <div id="divCustomers"></div>
+    <script type="text/javascript">
+function callbackFunction(result, methodName)
+        {
+
+            var html = '<ul>';
+            for(var i = 0; i < result.length; i++)
+            {
+                html += '<li>' + result[i] + '</li>';
+            }
+            html += '</ul>';
+            document.getElementById('divCustomers').innerHTML = html;
+        }
+</script>
+<script type="text/javascript" src="http://www.localhostzou.com/test.php?jback=callbackFunction"></script>
+</body>
+</html>
+
+---------------------------------------------------》》》》》》》》》》》》》》》》》php代码
+<?php
+header('Content-type: application/json');
+//获取回调函数名
+$jsoncallback = htmlspecialchars($_REQUEST ['jback']);
+
+//json数据
+$json_data = '["customername5","customername2","customername3"]';
+//输出jsonp格式的数据
+echo $jsoncallback . "(" . $json_data . ")";
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+
+2、json 数组与字符串的转换
+
+var x = JSON.stringify(arr1); 把对象转化成字符串
+
+
+===============================》》》》》》》》》》》》》》》》》》》》
+$.each()用法            ****************************注意事件******************* ajax()提交不用form表单
+   function aa(){
+      
+      	 var users = $('#user').val();
+      	var pwds = $('#pwd').val();
+          $.ajax({
+                type:'post',
+                dataType:'json',
+                url:'test.php',
+                data:{user:users,pwd:pwds},
+                success:function(e){
+                	 
+                   trs = "<ul>";
+                        
+                           $.each(e,function(n,value) {  
+				            
+				            
+				             trs += "<li style='border:1px solid #f00;'>用户"+n +value+"</li>";  
+				            
+				            });  
+                           trs += '</ul>';
+				          $("#zou").append(trs); 
+                  
+
+                }
+
+          })
+
+      }
+===========================================================================================1、grep函数可以找到数组中符合条件的值
+var arr = [3,65,47,27,99];
+	//找到数组中 值大于10并且键大于2的元素
+	var result = $.grep(arr,function(value,key){
+		//值大于10并且键大于2
+		if(value>10&&key>=2){
+			return value;
+		}
+	});
+	alert(result);
+

@@ -1,0 +1,17 @@
+git pull
+1、git init 初始化
+2、git clone ssh://zou@121.43.33.196:29418/test.git
+3、git add .
+4、git commit -m '注释'
+5、git push
+
+6、git push --set-upstream origin master 把本地的文件映射到远程
+
+7、生成sshkey  git config --global user.email "zouyongcai.409949595@qq.com"
+
+$ ssh  (输入)
+ssh.exe          ssh-agent.exe    sshd.exe         ssh-keyscan.exe
+ssh-add.exe   
+$ ssh-keygen.exe 按回车 ，在C:\Users\Administrator\.ssh生成 id_rsa.pub（复制）
+
+ 

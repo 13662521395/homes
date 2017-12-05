@@ -1,0 +1,5 @@
+this->success()跳转不来
+
+$this->error();用不了
+
+图片怎么图片与span标签在一条线
